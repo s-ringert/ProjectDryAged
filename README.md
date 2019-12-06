@@ -13,6 +13,12 @@ cp config/autoload/development.local.php.dist config/autoload/development.local.
 ```shell
 sudo docker-compose run docker-php-fpm composer install
 ```
+                            
+* set rw on cache dir                        
+```shell
+chmod -R 666 data/cache
+```
+
 * start application
 ```shell
 sudo docker-compose up
