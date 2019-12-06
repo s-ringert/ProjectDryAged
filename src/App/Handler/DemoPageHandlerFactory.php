@@ -2,6 +2,7 @@
 
 namespace App\Handler;
 
+use App\Service\GuiltyService;
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
 use Zend\Expressive\Router\RouterInterface;
@@ -27,11 +28,10 @@ class DemoPageHandlerFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $router = $container->get(RouterInterface::class);
-        $template = $container->has(TemplateRendererInterface::class)
-            ? $container->get(TemplateRendererInterface::class)
-            : null;
 
-        return new DemoPageHandler(get_class($container), $router, $template);
+        return new DemoPageHandler(
+            $container->get(GuiltyService::class),
+            $container->get(TemplateRendererInterface::class)
+        );
     }
 }

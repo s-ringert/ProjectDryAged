@@ -1,18 +1,23 @@
 # About
-* This is a PHP 7.2 Skeleton 
-* Zend Expressive 
-* Doctrine
-* Twig
-* CI with travis
-* Docker
-* [![Build Status](https://travis-ci.org/s-ringert/skeleton.svg?branch=master)](https://travis-ci.org/s-ringert/skeleton)
+* Fun App to decide who is guilty
 
 # Setup
 * clone repo
-* copy env file for dbroot pw
-* copy config files
+* copy config dist files
+```shell
+cp .env.dist .env
+cp config/autoload/database.local.php.dist config/autoload/database.local.php
+cp config/autoload/development.local.php.dist config/autoload/development.local.php      
+```
 * composer install
-* docker-compose up
+```shell
+sudo docker-compose run docker-php-fpm composer install
+```
+* start application
+```shell
+sudo docker-compose up
+```
+
 
 # Helpful commands
 ## Start Application
@@ -37,8 +42,3 @@ sudo docker-compose run docker-php-fpm composer doctrine
 ```shell
  sudo docker-compose run docker-php-fpm php public/createProduct.php product7
 ```
-
-
-## TODO
-* HTTP + HTTPS - https://certbot.eff.org/
-* HAProxy

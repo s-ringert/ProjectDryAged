@@ -5,8 +5,8 @@ namespace App;
 
 use App\Handler\DemoPageHandler;
 use App\Handler\DemoPageHandlerFactory;
-use App\Handler\ListProductsHandler;
-use App\Handler\ListProductsHandlerFactory;
+use App\Service\GuiltyService;
+use App\Service\GuiltyServiceFactory;
 use Doctrine\ORM\EntityManager;
 
 /**
@@ -41,11 +41,9 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories' => [
-                Handler\DemoJsonHandler::class => Handler\DemoJsonHandlerFactory::class,
                 DemoPageHandler::class => DemoPageHandlerFactory::class,
                 EntityManager::class => Entity\Manager\EntityManagerFactory::class,
-                ListProductsHandler::class => ListProductsHandlerFactory::class,
-
+                GuiltyService::class => GuiltyServiceFactory::class,
             ],
         ];
     }

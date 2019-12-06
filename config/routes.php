@@ -34,6 +34,4 @@ use Zend\Expressive\MiddlewareFactory;
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
     $app->get('/', App\Handler\DemoPageHandler::class, 'home');
-    $app->get('/json', App\Handler\DemoJsonHandler::class, 'json');
-    $app->get('/listProducts', App\Handler\ListProductsHandler::class, 'listProducts');
 };
