@@ -24,7 +24,6 @@ chmod -R 666 data/cache
 sudo docker-compose up
 ```
 
-
 # Helpful commands
 ## Start Application
 ```shell
