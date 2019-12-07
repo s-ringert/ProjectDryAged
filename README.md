@@ -1,5 +1,6 @@
 # About
 * Fun App to decide who is guilty
+* [![Build Status](https://travis-ci.org/s-ringert/guilty.svg?branch=master)](https://travis-ci.org/s-ringert/guilty)
 
 # Setup
 * clone repo
