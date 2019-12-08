@@ -8,7 +8,7 @@
             <generator strategy="AUTO" />
         </id>
 
-        <field name="quote" type="string" />
-        <field name="author" type="text" />
+        <field name="quote" type="text" />
+        <field name="author" type="string" />
     </entity>
 </doctrine-mapping>
