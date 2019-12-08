@@ -3,6 +3,7 @@
 namespace App\Handler;
 
 use App\Service\GuiltyService;
+use App\Service\QuoteService;
 use DateTime;
 use DateTimeZone;
 use Interop\Container\ContainerInterface;
@@ -34,6 +35,7 @@ class DemoPageHandlerFactory implements FactoryInterface
 
         return new DemoPageHandler(
             $container->get(GuiltyService::class),
+            $container->get(QuoteService::class),
             $container->get(TemplateRendererInterface::class),
             new DateTime('now', new DateTimeZone('Europe/Berlin'))
         );

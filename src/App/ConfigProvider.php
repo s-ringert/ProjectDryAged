@@ -7,6 +7,8 @@ use App\Handler\DemoPageHandler;
 use App\Handler\DemoPageHandlerFactory;
 use App\Service\GuiltyService;
 use App\Service\GuiltyServiceFactory;
+use App\Service\QuoteService;
+use App\Service\QuoteServiceFactory;
 use Doctrine\ORM\EntityManager;
 
 /**
@@ -44,6 +46,7 @@ class ConfigProvider
                 DemoPageHandler::class => DemoPageHandlerFactory::class,
                 EntityManager::class => Entity\Manager\EntityManagerFactory::class,
                 GuiltyService::class => GuiltyServiceFactory::class,
+                QuoteService::class => QuoteServiceFactory::class,
             ],
         ];
     }
