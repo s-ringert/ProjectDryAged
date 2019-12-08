@@ -3,6 +3,8 @@
 namespace App\Handler;
 
 use App\Service\GuiltyService;
+use DateTime;
+use DateTimeZone;
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
 use Zend\Expressive\Router\RouterInterface;
@@ -24,6 +26,7 @@ class DemoPageHandlerFactory implements FactoryInterface
      * @return object
      * @throws ServiceNotFoundException if unable to resolve the service.
      * @throws ServiceNotCreatedException if an exception is raised when
+     * @throws \Exception
      *     creating a service
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
@@ -31,7 +34,8 @@ class DemoPageHandlerFactory implements FactoryInterface
 
         return new DemoPageHandler(
             $container->get(GuiltyService::class),
-            $container->get(TemplateRendererInterface::class)
+            $container->get(TemplateRendererInterface::class),
+            new DateTime('now', new DateTimeZone('Europe/Berlin'))
         );
     }
 }

@@ -17,23 +17,28 @@ class DemoPageHandler implements RequestHandlerInterface
     /** @var TemplateRendererInterface */
     protected $template;
 
+    /** @var \DateTime */
+    protected $dateTime;
+
     /**
      * DemoPageHandler constructor.
      * @param GuiltyService $guiltyService
      * @param TemplateRendererInterface $template
+     * @param \DateTime $dateTime
      */
-    public function __construct(GuiltyService $guiltyService, TemplateRendererInterface $template)
+    public function __construct(GuiltyService $guiltyService, TemplateRendererInterface $template, \DateTime $dateTime)
     {
         $this->guiltyService = $guiltyService;
         $this->template = $template;
+        $this->dateTime = $dateTime;
     }
-
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $guiltyPerson = $this->guiltyService->getGuiltyPerson();
         $data = [
-            'guiltyPerson' => $guiltyPerson
+            'guiltyPerson' => $guiltyPerson,
+            'currentDateTime' => $this->dateTime
         ];
 
         return new HtmlResponse($this->template->render('app::demo-page', $data));

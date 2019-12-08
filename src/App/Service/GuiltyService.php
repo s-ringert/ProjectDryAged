@@ -7,7 +7,7 @@ use DateTime;
 class GuiltyService
 {
     /** @var DateTime */
-    protected $date;
+    protected $dateTime;
 
     const NAME_SASCHA = 'Sascha';
     const NAME_VANESSA = 'Vanessa';
@@ -18,12 +18,12 @@ class GuiltyService
      */
     public function __construct(DateTime $date)
     {
-        $this->date = $date;
+        $this->dateTime = $date;
     }
 
     public function getGuiltyPerson()
     {
-        $currentDay = (int)$this->date->format('d');
+        $currentDay = (int)$this->dateTime->format('d');
 
         $guiltyPerson = self::NAME_VANESSA;
         if (($currentDay % 2) === 1) {
