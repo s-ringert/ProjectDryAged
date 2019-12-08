@@ -9,10 +9,10 @@ services:
       - backend
     volumes:
         - ./:/app/
-    
+
   docker-mysql:
     image: mysql:8.0
-    ports: 
+    ports:
       - "3306:3306"
     networks:
       - backend
