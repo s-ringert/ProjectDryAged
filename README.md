@@ -1,5 +1,6 @@
 # About
 * Fun App to decide who is guilty
+* [![Build Status](https://travis-ci.org/s-ringert/guilty.svg?branch=master)](https://travis-ci.org/s-ringert/guilty)
 
 # Setup
 * clone repo
@@ -23,7 +24,6 @@ chmod -R 666 data/cache
 ```shell
 sudo docker-compose up
 ```
-
 
 # Helpful commands
 ## Start Application
