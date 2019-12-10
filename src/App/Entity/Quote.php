@@ -80,4 +80,33 @@ class Quote
     {
         return $this->id;
     }
+    /**
+     * @var string
+     */
+    private $authortoooor;
+
+
+    /**
+     * Set authortoooor.
+     *
+     * @param string $authortoooor
+     *
+     * @return Quote
+     */
+    public function setAuthortoooor($authortoooor)
+    {
+        $this->authortoooor = $authortoooor;
+
+        return $this;
+    }
+
+    /**
+     * Get authortoooor.
+     *
+     * @return string
+     */
+    public function getAuthortoooor()
+    {
+        return $this->authortoooor;
+    }
 }

@@ -21,7 +21,7 @@ chmod -R 777 data/cache
 ```
 * init db
 ```shell
-sudo docker-compose run docker-php-fpm composer doctrine help orm:schema-tool:create
+sudo docker-compose run docker-php-fpm php vendor/bin/doctrine orm:schema-tool:create
 ```
 
 * start application
@@ -45,14 +45,12 @@ sudo docker-compose run docker-php-fpm composer check
 
 ## Run Doctrine
 ```shell
-sudo docker-compose run docker-php-fpm composer doctrine
-sudo docker-compose run docker-php-fpm composer doctrine orm:generate:entities src
-sudo docker-compose run docker-php-fpm composer doctrine orm:schema-tool:create
+sudo docker-compose run docker-php-fpm php vendor/bin/doctrine
 ```
 
-## Run PHP CLI in PHP-FPM
+## Run PHP CLI
 ```shell
- sudo docker-compose run docker-php-fpm php public/createProduct.php product7
+ sudo docker-compose run docker-php-fpm php
 ```
 
 ## Clear Caches
