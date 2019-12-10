@@ -46,12 +46,12 @@ class DemoPageHandler implements RequestHandlerInterface
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
 
-        $quote = $this->quoteService->getRandomQuote();
+        $quote = $this->quoteService->getQuoteOfTheDay();
         $guiltyPerson = $this->guiltyService->getGuiltyPerson();
         $data = [
             'guiltyPerson' => $guiltyPerson,
             'currentDateTime' => $this->dateTime,
-            'quote' => $quote
+            'quote' => $quote,
         ];
 
         return new HtmlResponse($this->template->render('app::demo-page', $data));

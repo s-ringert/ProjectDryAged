@@ -7,8 +7,6 @@ use App\Service\QuoteService;
 use DateTime;
 use DateTimeZone;
 use Interop\Container\ContainerInterface;
-use Interop\Container\Exception\ContainerException;
-use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;

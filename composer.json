@@ -60,8 +60,8 @@
         "expressive": "expressive --ansi",
         "check": [
             "@cs-check",
-            "@test",
-            "@stan"
+            "@stan",
+            "@test"
         ],
         "clear-all-cache": [
             "@clear-config-cache",
