@@ -19,7 +19,7 @@
 
     "require": {
         "php": "^7.2",
-        "doctrine/orm": "^2.7",
+        "doctrine/orm": "2.7.0",
         "symfony/var-dumper": "^5.0",
         "zendframework/zend-component-installer": "^2.1.1",
         "zendframework/zend-config-aggregator": "^1.0",
@@ -62,6 +62,13 @@
             "@cs-check",
             "@test",
             "@stan"
+        ],
+        "clear-all-cache": [
+            "@clear-config-cache",
+            "doctrine orm:clear-cache:metadata",
+            "doctrine orm:clear-cache:query",
+            "doctrine orm:clear-cache:result",
+            "composer clear-cache"
         ],
         "clear-config-cache": "php bin/clear-config-cache.php",
         "cs-check": "phpcs",

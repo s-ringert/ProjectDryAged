@@ -19,12 +19,12 @@ class QuoteService
         $this->entityManager = $entityManager;
     }
 
-    public function getAllQuotes(){
-        $quoteRepository = $this->entityManager->getRepository('\App\Entity\Quote');
-        $quoteList = $quoteRepository->findAll();
-
-        return $quoteList;
-    }
+//    public function getAllQuotes(){
+//        $quoteRepository = $this->entityManager->getRepository('\App\Entity\Quote');
+//        $quoteList = $quoteRepository->findAll();
+//
+//        return $quoteList;
+//    }
 
     /**
      * @return Quote
@@ -35,5 +35,10 @@ class QuoteService
 
         $randomKey = array_rand($quoteList, 1);
         return $quoteList[$randomKey];
+    }
+
+    public function getQuoteOfTheDay(){
+        //try to get quote from DateQuote Table
+        //if there is no quote, get random quote and put it into DB
     }
 }

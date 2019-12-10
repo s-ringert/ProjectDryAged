@@ -47,10 +47,15 @@ sudo docker-compose run docker-php-fpm composer check
 ```shell
 sudo docker-compose run docker-php-fpm composer doctrine
 sudo docker-compose run docker-php-fpm composer doctrine orm:generate:entities src
-sudo docker-compose run docker-php-fpm composer doctrine help orm:schema-tool:create
+sudo docker-compose run docker-php-fpm composer doctrine orm:schema-tool:create
 ```
 
 ## Run PHP CLI in PHP-FPM
 ```shell
  sudo docker-compose run docker-php-fpm php public/createProduct.php product7
+```
+
+## Clear Caches
+```shell
+sudo docker-compose run docker-php-fpm composer clear-all-cache
 ```

@@ -7,5 +7,6 @@
          'dbname' => 'skeleton',
          'port' => '3306',
          'host' => 'docker-mysql',
+         'isDevMode' => true,
      ]
  ];
