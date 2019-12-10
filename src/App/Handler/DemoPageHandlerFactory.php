@@ -3,11 +3,10 @@
 namespace App\Handler;
 
 use App\Service\GuiltyService;
+use App\Service\QuoteService;
 use DateTime;
 use DateTimeZone;
 use Interop\Container\ContainerInterface;
-use Interop\Container\Exception\ContainerException;
-use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
@@ -34,6 +33,7 @@ class DemoPageHandlerFactory implements FactoryInterface
 
         return new DemoPageHandler(
             $container->get(GuiltyService::class),
+            $container->get(QuoteService::class),
             $container->get(TemplateRendererInterface::class),
             new DateTime('now', new DateTimeZone('Europe/Berlin'))
         );

@@ -17,7 +17,11 @@ sudo docker-compose run docker-php-fpm composer install
                             
 * set rw on cache dir                        
 ```shell
-chmod -R 666 data/cache
+chmod -R 777 data/cache
+```
+* init db
+```shell
+sudo docker-compose run docker-php-fpm php vendor/bin/doctrine orm:schema-tool:create
 ```
 
 * start application
@@ -41,10 +45,15 @@ sudo docker-compose run docker-php-fpm composer check
 
 ## Run Doctrine
 ```shell
-sudo docker-compose run docker-php-fpm composer doctrine
+sudo docker-compose run docker-php-fpm php vendor/bin/doctrine
 ```
 
-## Run PHP CLI in PHP-FPM
+## Run PHP CLI
 ```shell
- sudo docker-compose run docker-php-fpm php public/createProduct.php product7
+ sudo docker-compose run docker-php-fpm php
+```
+
+## Clear Caches
+```shell
+sudo docker-compose run docker-php-fpm composer clear-all-cache
 ```

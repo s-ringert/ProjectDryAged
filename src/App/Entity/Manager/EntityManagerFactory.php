@@ -15,7 +15,8 @@ class EntityManagerFactory implements \Zend\ServiceManager\Factory\FactoryInterf
         }
 
         $config = \Doctrine\ORM\Tools\Setup::createXMLMetadataConfiguration(
-            array(__DIR__ . "/../../../../config/xml")
+            [__DIR__ . "/../../../../config/xml"],
+            $appConfig['dbConfig']['isDevMode']
         );
         $entityManager = \Doctrine\ORM\EntityManager::create(
             $appConfig['dbConfig'],

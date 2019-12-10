@@ -13,4 +13,12 @@
                 <strong>{{ guiltyPerson }}</strong> ist heute an allem Schuld!</p>
         </div>
     </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            {{ quote.getQuote() }}
+            <br/>
+            <em>- {{ quote.getAuthor() }}</em>
+        </div>
+    </div>
 {% endblock %}
