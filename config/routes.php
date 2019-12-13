@@ -36,4 +36,5 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
     $app->get('/', App\Handler\QuotePageHandler::class, 'quote');
     $app->get('/guilty', App\Handler\GuiltyPageHandler::class, 'guilty');
     $app->get('/all-quotes', App\Handler\AllQuotesPageHandler::class, 'all-quotes');
+    $app->get('/problem', App\Handler\ProblemPageHandler::class, 'problem');
 };
