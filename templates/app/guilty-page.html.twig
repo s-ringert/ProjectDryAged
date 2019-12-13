@@ -1,6 +1,6 @@
 {% extends '@layout/default.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Schuld?{% endblock %}
 
 {% block content %}
     <div class="jumbotron">
@@ -9,16 +9,8 @@
 
     <div class="row">
         <div class="col-md-4">
-            <p>{{ currentDateTime.format('d.m.Y H:i:s') }}<br/>
+            <p>{{ currentDateTime.format('d.m.Y') }}<br/>
                 <strong>{{ guiltyPerson }}</strong> ist heute an allem Schuld!</p>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-12">
-            {{ quote.getQuote() }}
-            <br/>
-            <em>- {{ quote.getAuthor() }}</em>
         </div>
     </div>
 {% endblock %}
