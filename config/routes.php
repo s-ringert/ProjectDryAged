@@ -33,5 +33,7 @@ use Zend\Expressive\MiddlewareFactory;
  * );
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
-    $app->get('/', App\Handler\DemoPageHandler::class, 'home');
+    $app->get('/', App\Handler\QuotePageHandler::class, 'quote');
+    $app->get('/guilty', App\Handler\GuiltyPageHandler::class, 'guilty');
+    $app->get('/all-quotes', App\Handler\AllQuotesPageHandler::class, 'all-quotes');
 };

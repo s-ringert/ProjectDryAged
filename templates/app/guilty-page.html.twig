@@ -1,0 +1,16 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Schuld?{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1><span>Wer ist heute wieder schuld?</span></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p>{{ currentDateTime.format('d.m.Y') }}<br/>
+                <strong>{{ guiltyPerson }}</strong> ist heute an allem Schuld!</p>
+        </div>
+    </div>
+{% endblock %}
