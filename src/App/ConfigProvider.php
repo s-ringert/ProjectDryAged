@@ -9,6 +9,8 @@ use App\Handler\DemoPageHandler;
 use App\Handler\DemoPageHandlerFactory;
 use App\Handler\GuiltyPageHandler;
 use App\Handler\GuiltyPageHandlerFactory;
+use App\Handler\ProblemPageHandler;
+use App\Handler\ProblemPageHandlerFactory;
 use App\Handler\QuotePageHandler;
 use App\Handler\QuotePageHandlerFactory;
 use App\Service\GuiltyService;
@@ -52,6 +54,7 @@ class ConfigProvider
                 QuotePageHandler::class => QuotePageHandlerFactory::class,
                 GuiltyPageHandler::class => GuiltyPageHandlerFactory::class,
                 AllQuotesPageHandler::class => AllQuotesPageHandlerFactory::class,
+                ProblemPageHandler::class => ProblemPageHandlerFactory::class,
                 EntityManager::class => Entity\Manager\EntityManagerFactory::class,
                 GuiltyService::class => GuiltyServiceFactory::class,
                 QuoteService::class => QuoteServiceFactory::class,
