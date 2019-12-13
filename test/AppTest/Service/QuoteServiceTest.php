@@ -12,13 +12,16 @@ use Prophecy\Argument;
 
 class QuoteServiceTest extends TestCase
 {
+    const SAMPLE_QUOTE = 'situation normal all fucked up';
+    const SAMPLE_AUTHOR = 'Hackbarth Celine';
+
     public function testQuoteOfTheDayWithNoGeneratedDailyQuote()
     {
         $dateTime = $this->prophesize(\DateTime::class);
 
         $expectedQuote = new Quote();
-        $expectedQuote->setQuote('Foobar');
-        $expectedQuote->setAuthor('root');
+        $expectedQuote->setQuote(self::SAMPLE_QUOTE);
+        $expectedQuote->setAuthor(self::SAMPLE_AUTHOR);
 
         $expectedDateQuote = new DateQuote();
         $expectedDateQuote->setQuote($expectedQuote);
@@ -49,8 +52,8 @@ class QuoteServiceTest extends TestCase
         $dateTime = $this->prophesize(\DateTime::class);
 
         $expectedQuote = new Quote();
-        $expectedQuote->setQuote('Foobar');
-        $expectedQuote->setAuthor('root');
+        $expectedQuote->setQuote(self::SAMPLE_QUOTE);
+        $expectedQuote->setAuthor(self::SAMPLE_AUTHOR);
 
         $expectedDateQuote = new DateQuote();
         $expectedDateQuote->setQuote($expectedQuote);

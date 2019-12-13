@@ -31,8 +31,7 @@ class QuoteService
      */
     public function getRandomQuote(): Quote
     {
-        $quoteRepository = $this->entityManager->getRepository('\App\Entity\Quote');
-        $quoteList = $quoteRepository->findAll();
+        $quoteList = $this->getAllQuotes();
 
         $randomKey = array_rand($quoteList, 1);
 
@@ -61,6 +60,11 @@ class QuoteService
         return $quote;
     }
 
+    /**
+     * @return Quote
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
     protected function generateQuoteOfTheDay(): Quote
     {
         $quote = $this->getRandomQuote();
@@ -71,5 +75,17 @@ class QuoteService
         $this->entityManager->flush();
 
         return $quote;
+    }
+
+    /**
+     * @return Quote[]
+     */
+    public function getAllQuotes(): array
+    {
+        $quoteRepository = $this->entityManager->getRepository('\App\Entity\Quote');
+        /** @var Quote[] $quoteList */
+        $quoteList = $quoteRepository->findAll();
+
+        return $quoteList;
     }
 }

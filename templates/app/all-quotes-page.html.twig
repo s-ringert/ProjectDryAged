@@ -1,0 +1,23 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Alle Zitate{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1><span>Alle Zitate</span></h1>
+    </div>
+
+
+    <div class="row">
+        {% for quote in quoteList %}
+            <div class="col-md-12">
+                <hr>
+                <br/>
+                <strong>{{ quote.getQuote() }}</strong>
+                <br/>
+                <em>- {{ quote.getAuthor() }}</em>
+            </div>
+            <br/>
+        {% endfor %}
+    </div>
+{% endblock %}

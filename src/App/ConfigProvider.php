@@ -3,8 +3,14 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\AllQuotesPageHandler;
+use App\Handler\AllQuotesPageHandlerFactory;
 use App\Handler\DemoPageHandler;
 use App\Handler\DemoPageHandlerFactory;
+use App\Handler\GuiltyPageHandler;
+use App\Handler\GuiltyPageHandlerFactory;
+use App\Handler\QuotePageHandler;
+use App\Handler\QuotePageHandlerFactory;
 use App\Service\GuiltyService;
 use App\Service\GuiltyServiceFactory;
 use App\Service\QuoteService;
@@ -43,7 +49,9 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories' => [
-                DemoPageHandler::class => DemoPageHandlerFactory::class,
+                QuotePageHandler::class => QuotePageHandlerFactory::class,
+                GuiltyPageHandler::class => GuiltyPageHandlerFactory::class,
+                AllQuotesPageHandler::class => AllQuotesPageHandlerFactory::class,
                 EntityManager::class => Entity\Manager\EntityManagerFactory::class,
                 GuiltyService::class => GuiltyServiceFactory::class,
                 QuoteService::class => QuoteServiceFactory::class,
