@@ -37,7 +37,9 @@
 {% block javascript %}
 <script >
 $(document).ready(function () {
-    $('#quoteTable').DataTable();
+    $('#quoteTable').DataTable({
+        "lengthChange": false
+    });
 });
 </script>
 {% endblock %}
