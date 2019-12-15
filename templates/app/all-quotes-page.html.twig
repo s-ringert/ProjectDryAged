@@ -9,33 +9,35 @@
 
 
     <div class="row">
-        <table id="quoteTable">
-            <thead>
-            <tr>
-                <th>
-                    Zitat
-                </th>
-                <th>
-                    Author
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for quote in quoteList %}
+        <div class="col-md-12">
+            <table id="quoteTable" class="stripe row-border dataTable">
+                <thead>
                 <tr>
-                    <td>{{ quote.getQuote() }}</td>
-                    <td> {{ quote.getAuthor() }}</td>
+                    <th>
+                        Zitat
+                    </th>
+                    <th>
+                        Author
+                    </th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                {% for quote in quoteList %}
+                    <tr>
+                        <td>{{ quote.getQuote() }}</td>
+                        <td> {{ quote.getAuthor() }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}
 
 {% block javascript %}
-    <script>
-        $(document).ready(function () {
-            $('#quoteTable').DataTable();
-        });
-    </script>
+<script >
+$(document).ready(function () {
+    $('#quoteTable').DataTable();
+});
+</script>
 {% endblock %}
